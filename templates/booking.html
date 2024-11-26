@@ -5,6 +5,7 @@
     <title>Booking for {{competition['name']}} || GUDLFT</title>
 </head>
 <body>
+    {%if competition["status"] == "open"%}
     <h2>{{competition['name']}}</h2>
     Places available: {{competition['numberOfPlaces']}}
     <form action="/purchasePlaces" method="post">
@@ -13,5 +14,8 @@
         <label for="places">How many places?</label><input type="number" name="places" id=""/>
         <button type="submit">Book</button>
     </form>
+    {% else %}
+    <p>Compétition déjà passée</p>
+    {% endif %}
 </body>
 </html>
