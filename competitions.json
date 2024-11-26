@@ -9,6 +9,11 @@
             "name": "Fall Classic",
             "date": "2020-10-22 13:30:00",
             "numberOfPlaces": "13"
+        },
+        {
+            "name": "Winter Festival",
+            "date": "2025-02-15 18:00:00",
+            "numberOfPlaces": "5"
         }
     ]
 }
