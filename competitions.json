@@ -14,6 +14,11 @@
             "name": "Winter Festival",
             "date": "2025-02-15 18:00:00",
             "numberOfPlaces": "5"
+        },
+        {
+            "name": "Summer Classic",
+            "date": "2025-06-18 09:00:00",
+            "numberOfPlaces": "30"
         }
     ]
 }
