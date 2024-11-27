@@ -74,6 +74,9 @@ def purchasePlaces():
         flash("Not enough points")
         flash(" You have " + str(club["points"]) + " points")
         return render_template("welcome.html", club=club, competitions=competitions)
+    elif placesRequired > 12:
+        flash("You can only book a maximum of 12 places")
+        return render_template("welcome.html", club=club, competitions=competitions)
     else:
         competition["numberOfPlaces"] = int(competition["numberOfPlaces"]) - placesRequired
         club["points"] = int(club["points"]) - placesRequired
