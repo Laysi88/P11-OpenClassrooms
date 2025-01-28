@@ -22,6 +22,14 @@ def test_connexion_redirect_with_wrong_email(client):
     assert response.status_code == 200
 
 
+# test can't book in passed competition
+def test_cant_book_in_passed_competition(client):
+    data = {"competition": "Spring Festival", "club": "Simply Lift", "places": 5}
+    response = client.get("book/Spring%20Festival/Simply%20Lift")
+    assert "Compétition déjà passée" in response.data.decode()
+    assert response.status_code == 200
+
+
 # test route /logout with status code 302 and redirection to /index
 def test_logout_status_code_302(client):
     response = client.get("/logout")
