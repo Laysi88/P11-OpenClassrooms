@@ -86,3 +86,11 @@ def test_logout(client):
     response = client.get("/logout")
     assert response.status_code == 302
     assert response.headers["Location"] == "/"
+
+
+# test book more than available places
+def test_purchase_more_than_available_places(client):
+    data = {"competition": "Winter Festival", "club": "Iron Temple", "places": 8}
+    response = client.post("/purchasePlaces", data=data)
+    assert "Not enough places available" in response.data.decode()
+    assert response.status_code == 200
